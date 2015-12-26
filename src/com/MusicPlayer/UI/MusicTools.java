@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
-import com.MusicPlayer.Constant.PLAYSTATE;
+import com.MusicPlayer.constant.PLAYSTATE;
 
 public class MusicTools extends JPanel{
 	
@@ -20,8 +20,7 @@ public class MusicTools extends JPanel{
 	private IconButton next;
 	private IconButton voiceImage;
 	private JSlider voiceCtrBar;
-	
-	PLAYSTATE state;
+
 	
 	public MusicTools() {
 		// TODO Auto-generated constructor stub
@@ -43,7 +42,6 @@ public class MusicTools extends JPanel{
 		
 		playState = new IconButton("icon/pause.png");
 		box.add(playState);
-		state = PLAYSTATE.PAUSE;
 		
 		box.add(Box.createRigidArea(new Dimension(10, 30)));
 		
@@ -62,26 +60,25 @@ public class MusicTools extends JPanel{
 		box.add(voiceCtrBar);
 		
 		box.add(Box.createRigidArea(new Dimension(10, 30)));	
-		
-		setButtonAction();
 	}
 	
-	public void setButtonAction(){
+	public IconButton getPlayMode(){
+		return playMode;
+	}
+	
+	public IconButton getLast(){
+		return last;
+	}
+	
+	public IconButton getPlayState(){
+		return playState;
+	}
+	
+	public IconButton getNext(){
+		return next;
+	}
 		
-		playState.addActionListener(
-				new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						if(state == PLAYSTATE.PAUSE){
-							state = PLAYSTATE.PLAYING;
-							playState.setIcon(new ImageIcon("icon/play.png"));
-						}else{
-							state = PLAYSTATE.PAUSE;
-							playState.setIcon(new ImageIcon("icon/pause.png"));
-						}
-					}
-				});
+	public JSlider getVoiceCtrBar(){
+		return voiceCtrBar;
 	}
 }

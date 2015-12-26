@@ -11,6 +11,7 @@ public class Main{
 	
 	public static void main(String[] argv){
 		UI u = new UI();
+		u.display();
 	}
 	
 }

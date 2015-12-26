@@ -1,4 +1,4 @@
-package com.MusicPlayer.Constant;
+package com.MusicPlayer.constant;
 
 public enum PLAYSTATE{
 	PAUSE,

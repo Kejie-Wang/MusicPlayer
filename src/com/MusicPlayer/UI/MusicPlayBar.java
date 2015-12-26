@@ -1,5 +1,7 @@
 package com.MusicPlayer.UI;
 
+import java.util.Timer;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -30,7 +32,8 @@ public class MusicPlayBar extends JPanel{
 		box.add(Box.createHorizontalStrut(5));
 	}
 	
-	public void setMax(int max){
-		processBar.setMaximum(max);
+	public void setDuration(int duration){	
+		processBar.setMaximum(duration);
 	}
+
 }
