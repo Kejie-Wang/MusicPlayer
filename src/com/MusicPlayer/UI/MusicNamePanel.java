@@ -36,7 +36,7 @@ public class MusicNamePanel extends JPanel{
 		
 	public MusicNamePanel() {	
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		
+		setBackground(new Color(0, 0, 0));
 		Box box = Box.createHorizontalBox();
 		add(box);
 		
@@ -44,17 +44,23 @@ public class MusicNamePanel extends JPanel{
 		addASongFile = new IconButton("icon/add.png");
 		addASongDir = new IconButton("icon/dir.png");
 		
+		musicName.setForeground(new Color(67, 218, 215));
+		
 		box.add(musicName, BorderLayout.WEST);
 		box.add(Box.createGlue());
 		box.add(addASongFile);
-		box.add(Box.createRigidArea(new Dimension(5, 30)));
-		box.add(addASongDir);
+		//box.add(Box.createRigidArea(new Dimension(5, 30)));
+		//box.add(addASongDir);
 	}
 	
 	public void setMusicName(String name){
 		musicName.setText(name);
 	}
 		
+	public JLabel getMusicName(){
+		return musicName;
+	}
+	
 	public IconButton getAddASongFile(){
 		return addASongFile;
 	}

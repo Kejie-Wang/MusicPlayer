@@ -1,8 +1,8 @@
 package com.MusicPlayer.constant;
 
 public enum PLAYMODE {
-	EQUENTIAL,
+	LISTLOOP,
+	SEQUENTIAL,
 	RANDOOM,
-	SINGLE,
-	LISTLOOP
+	SINGLE
 };

@@ -12,6 +12,8 @@ public class Music {
 	private String path;
 	private String musicName;
 	private int duration;
+	private int bitRate;
+	private long totalBytes;
 	private String artist;
 	private String alnum;
 	private String year;
@@ -30,6 +32,8 @@ public class Music {
 			
 			musicName = song.getName();
 			duration = header.getTrackLength();
+			bitRate = new Integer(header.getBitRate());
+			totalBytes = duration * bitRate / 8;
 			artist = tag.getFirst(FieldKey.ARTIST);
 			alnum = tag.getFirst(FieldKey.ALBUM);
 			year = tag.getFirst(FieldKey.YEAR);		
@@ -55,6 +59,18 @@ public class Music {
 		dura += (new Integer(sec)).toString();
 		
 		return dura;
+	}
+	
+	public int getTotalTime(){
+		return duration;
+	}
+	
+	public int getBitRate(){
+		return bitRate;
+	}
+	
+	public long getTotalBytes(){
+		return totalBytes;
 	}
 	
 	public String getArtist(){
